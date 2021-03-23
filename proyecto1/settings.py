@@ -25,7 +25,7 @@ SECRET_KEY = 'l+p9hf8m1nu#&@xzx986n7eg@w=z#=)o3-0-$m!&tcndwg_17('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['young-island-42683.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
