@@ -25,10 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-zdy7n8iu-e85*$al))fbaya*@4496u=*!5slkn$kts4oko)&!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['thawing-plains-31930.herokuapp.com', '127.0.0.1']
-
+# For Heroku
+#ALLOWED_HOSTS = ['thawing-plains-31930.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -74,7 +75,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'crml.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -124,10 +124,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#For HEROKU
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/images/'
-# 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -136,3 +140,4 @@ GRAPH_MODELS= {
     'all_applications':False,
     'group_models':True
 }
+

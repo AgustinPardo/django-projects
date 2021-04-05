@@ -33,9 +33,12 @@ def registerPage(request):
             user.groups.add(group)
 
             #Cuando creo un usuario nuevo lo asocio a un Customer
-            Customer.objects.create(
-                user=user
+            customer=Customer.objects.create(
+                user=user,
+                name=username,
+                email=form.cleaned_data.get("email")
             )
+            customer.save()
             messages.success(request, "Account was created for "+username)
             return redirect("login")
     context={'form':form}
@@ -84,6 +87,18 @@ def userPage(request):
         "delivered":delivered,
         "pending":pending}
     return render(request, 'accounts/user.html', context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
+def accountSettings(request):
+    form = CustomerForm(instance=request.user.customer)
+    if request.method == "POST":
+        form = CustomerForm(request.POST, request.FILES, instance=request.user.customer)
+        if form.is_valid:
+            form.save()
+            return redirect('account')
+    context={'form':form}
+    return render(request, 'accounts/account_settings.html', context)
 
 @login_required(login_url='login')
 @admin_only
