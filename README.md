@@ -5,3 +5,6 @@ https://young-island-42683.herokuapp.com/
 
 # django-poll-app
 https://arcane-spire-96358.herokuapp.com/
+
+# django-customer-admin-app
+https://thawing-plains-31930.herokuapp.com/
