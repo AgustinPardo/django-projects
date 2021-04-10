@@ -8,3 +8,6 @@ https://arcane-spire-96358.herokuapp.com/
 
 # django-customer-admin-app
 https://thawing-plains-31930.herokuapp.com/
+
+# django Todo App | Django REST Framework & Ajax
+
