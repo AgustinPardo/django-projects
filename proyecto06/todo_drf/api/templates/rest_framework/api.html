@@ -1,0 +1,9 @@
+{% extends "rest_framework/base.html" %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumb">
+    <li><a href="{% url 'api-overview' %}">api-overview</a></li>
+    <li><a href="{% url 'task-list' %}">task lists</a></li>
+    <li><a href="{% url 'task-create' %}">task-create</a></li>
+  </ul>
+{% endblock %}
